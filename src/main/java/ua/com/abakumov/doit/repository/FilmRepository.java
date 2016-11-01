@@ -1,6 +1,6 @@
-package javabeat.net.springboot.repository;
+package ua.com.abakumov.doit.repository;
 
-import javabeat.net.springboot.domain.Film;
+import ua.com.abakumov.doit.domain.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FilmRepository extends JpaRepository<Film, String> {

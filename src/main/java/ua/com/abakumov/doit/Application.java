@@ -1,4 +1,4 @@
-package javabeat.net.springboot;
+package ua.com.abakumov.doit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

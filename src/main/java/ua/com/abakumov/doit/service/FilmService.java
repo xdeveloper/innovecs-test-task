@@ -1,6 +1,6 @@
-package javabeat.net.springboot.service;
+package ua.com.abakumov.doit.service;
 
-import javabeat.net.springboot.domain.Film;
+import ua.com.abakumov.doit.domain.Film;
 
 import java.util.Set;
 

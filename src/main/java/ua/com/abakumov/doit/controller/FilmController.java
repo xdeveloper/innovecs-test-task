@@ -1,7 +1,7 @@
-package javabeat.net.springboot.controller;
+package ua.com.abakumov.doit.controller;
 
-import javabeat.net.springboot.domain.Film;
-import javabeat.net.springboot.service.FilmService;
+import ua.com.abakumov.doit.domain.Film;
+import ua.com.abakumov.doit.service.FilmService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;

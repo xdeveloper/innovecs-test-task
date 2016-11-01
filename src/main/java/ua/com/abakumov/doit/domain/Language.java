@@ -1,4 +1,4 @@
-package javabeat.net.springboot.domain;
+package ua.com.abakumov.doit.domain;
 
 import com.google.common.base.Objects;
 

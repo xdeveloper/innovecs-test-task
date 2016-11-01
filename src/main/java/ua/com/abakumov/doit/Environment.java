@@ -1,4 +1,4 @@
-package javabeat.net.springboot;
+package ua.com.abakumov.doit;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;

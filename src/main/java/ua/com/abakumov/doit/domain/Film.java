@@ -1,4 +1,4 @@
-package javabeat.net.springboot.domain;
+package ua.com.abakumov.doit.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -25,7 +25,7 @@ public class Film {
     private String description;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    @JoinColumn(name="language_id")
     private Language language;
 
 

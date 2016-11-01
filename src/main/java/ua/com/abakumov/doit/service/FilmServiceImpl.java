@@ -1,16 +1,13 @@
-package javabeat.net.springboot.service;
+package ua.com.abakumov.doit.service;
 
-import javabeat.net.springboot.domain.Film;
-import javabeat.net.springboot.repository.FilmRepository;
+import ua.com.abakumov.doit.domain.Film;
+import ua.com.abakumov.doit.repository.FilmRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 import java.util.Set;
 
 /**
