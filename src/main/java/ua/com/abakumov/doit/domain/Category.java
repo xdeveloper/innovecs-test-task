@@ -1,11 +1,13 @@
 package ua.com.abakumov.doit.domain;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.google.common.base.Objects;
 import lombok.Data;
 import ua.com.abakumov.doit.json.View;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -15,16 +17,17 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
-@Table(name = "language")
-public class Language {
+@Table(name = "category")
+public class Category {
 
     @Id
     @NotNull
-    @Column(name = "language_id", nullable = false, updatable = false)
+    @Column(name = "category_id", nullable = false, updatable = false)
     private String id;
 
     @NotNull
     @Column(name = "name", nullable = false)
     @JsonView(View.Standard.class)
     private String name;
+    
 }

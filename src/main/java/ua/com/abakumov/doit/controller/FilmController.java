@@ -1,6 +1,8 @@
 package ua.com.abakumov.doit.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import ua.com.abakumov.doit.domain.Film;
+import ua.com.abakumov.doit.json.View;
 import ua.com.abakumov.doit.service.FilmService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,7 @@ public class FilmController {
         this.service = service;
     }
 
+    @JsonView(View.Standard.class)
     @RequestMapping(value = "/film/{id}", method = RequestMethod.GET)
     public Film get(@PathVariable(value = "id") String id) {
         Film film = service.searchById(id);
