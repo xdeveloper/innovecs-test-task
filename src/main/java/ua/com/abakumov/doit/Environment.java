@@ -6,9 +6,11 @@ import org.springframework.context.annotation.Configuration;
 
 
 /**
+ * Central configuration class
  * (c) 2016
  * Created by air on 01.11.16.
  */
+@SuppressWarnings(value = "unused")
 @Configuration
 public class Environment {
 
