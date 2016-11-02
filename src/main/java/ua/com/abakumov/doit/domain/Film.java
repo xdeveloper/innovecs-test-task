@@ -49,7 +49,6 @@ public class Film {
     @JsonView(View.Standard.class)
     private String rating;
 
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinTable(
             name = "film_category",

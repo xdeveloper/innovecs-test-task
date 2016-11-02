@@ -1,5 +1,7 @@
 package ua.com.abakumov.doit.service;
 
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.domain.Specifications;
 import ua.com.abakumov.doit.domain.Actor;
 import ua.com.abakumov.doit.domain.Category;
 import ua.com.abakumov.doit.domain.Film;
@@ -13,7 +15,11 @@ import org.springframework.stereotype.Service;
 import ua.com.abakumov.doit.repository.LanguageRepository;
 
 import javax.inject.Inject;
+import javax.persistence.criteria.*;
 import java.util.List;
+import java.util.Optional;
+
+import static org.springframework.data.jpa.domain.Specifications.where;
 
 /**
  * (c) 2016
@@ -62,8 +68,40 @@ public class FilmServiceImpl implements FilmService {
         return languageRepository.findAllByOrderByNameAsc();
     }
 
+
     @Override
-    public List<Film> searchFilms(String title, String description, String categoryName, String actorName, String languageName) {
-        return null;
+    public List<Film> searchFilms(Optional<String> title, Optional<String> description, Optional<String> categoryName, Optional<String> actorLastName, Optional<String> languageName) {
+
+        Specifications<Film> specifications = null;
+
+        if (title.isPresent()) {
+            specifications = appendTo(specifications, eqSpec("title", title.get()));
+        }
+
+        if (description.isPresent()) {
+            specifications = appendTo(specifications, eqSpec("description", description.get()));
+        }
+
+        return filmRepository.findAll(specifications);
     }
+
+
+
+    // ----  Utilities below -----
+
+
+    private Specification<Film> eqSpec(String k, String v) {
+        return (root, query, builder) -> builder.equal(root.get(k), v);
+    }
+
+    private Specifications<Film> appendTo(Specifications<Film> list, Specification<Film> specification) {
+        if (list == null) {
+            list = where(specification);
+        } else {
+            list = list.and(specification);
+        }
+
+        return list;
+    }
+
 }

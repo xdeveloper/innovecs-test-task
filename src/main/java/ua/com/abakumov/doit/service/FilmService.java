@@ -6,6 +6,7 @@ import ua.com.abakumov.doit.domain.Film;
 import ua.com.abakumov.doit.domain.Language;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Films API
@@ -17,7 +18,7 @@ public interface FilmService {
 
     Film getFilmById(String id);
 
-    List<Film> searchFilms(String title, String description, String categoryName, String actorName, String languageName);
+    List<Film> searchFilms(Optional<String> title, Optional<String> description, Optional<String> categoryName, Optional<String> actorName, Optional<String> languageName);
 
     List<Category> listCategories();
 
