@@ -29,5 +29,9 @@ public class Category {
     @Column(name = "name", nullable = false)
     @JsonView(View.Standard.class)
     private String name;
+
+    @NotNull
+    @Column(name = "last_update", nullable = false)
+    private String lastUpdate;
     
 }

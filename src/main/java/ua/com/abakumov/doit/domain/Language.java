@@ -1,11 +1,13 @@
 package ua.com.abakumov.doit.domain;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.google.common.base.Objects;
 import lombok.Data;
 import ua.com.abakumov.doit.json.View;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -27,4 +29,8 @@ public class Language {
     @Column(name = "name", nullable = false)
     @JsonView(View.Standard.class)
     private String name;
+
+    @NotNull
+    @Column(name = "last_update", nullable = false)
+    private String lastUpdate;
 }

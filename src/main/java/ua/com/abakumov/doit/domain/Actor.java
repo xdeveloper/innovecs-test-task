@@ -34,4 +34,8 @@ public class Actor {
     @JsonView(View.Standard.class)
     private String lastName;
 
+    @NotNull
+    @Column(name = "last_update", nullable = false)
+    private String lastUpdate;
+
 }

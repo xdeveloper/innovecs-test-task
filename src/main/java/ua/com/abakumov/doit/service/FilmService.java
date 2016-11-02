@@ -1,8 +1,11 @@
 package ua.com.abakumov.doit.service;
 
+import ua.com.abakumov.doit.domain.Actor;
+import ua.com.abakumov.doit.domain.Category;
 import ua.com.abakumov.doit.domain.Film;
+import ua.com.abakumov.doit.domain.Language;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Films API
@@ -12,8 +15,13 @@ import java.util.Set;
  */
 public interface FilmService {
 
-    Film searchById(String id);
+    Film getFilmById(String id);
 
-    Set<Film> search(String title, String description, String categoryName, String actorName, String languageName);
+    List<Film> searchFilms(String title, String description, String categoryName, String actorName, String languageName);
 
+    List<Category> listCategories();
+
+    List<Language> listLanguages();
+
+    List<Actor> listActors();
 }
