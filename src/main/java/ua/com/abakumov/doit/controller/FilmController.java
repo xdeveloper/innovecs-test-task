@@ -38,14 +38,14 @@ public class FilmController {
     public List<Film> search(@RequestParam(value = "title", required = false) String title,
                              @RequestParam(value = "description", required = false) String description,
                              @RequestParam(value = "categoryName", required = false) String categoryName,
-                             @RequestParam(value = "actorName", required = false) String actorName,
+                             @RequestParam(value = "actorLastName", required = false) String actorLastName,
                              @RequestParam(value = "languageName", required = false) String languageName) {
 
         return service.searchFilms(
                 ofNullable(title),
                 ofNullable(description),
                 ofNullable(categoryName),
-                ofNullable(actorName),
+                ofNullable(actorLastName),
                 ofNullable(languageName));
     }
 

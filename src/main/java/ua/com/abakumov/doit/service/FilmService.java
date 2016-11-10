@@ -18,7 +18,7 @@ public interface FilmService {
 
     Film getFilmById(String id);
 
-    List<Film> searchFilms(Optional<String> title, Optional<String> description, Optional<String> categoryName, Optional<String> actorName, Optional<String> languageName);
+    List<Film> searchFilms(Optional<String> title, Optional<String> description, Optional<String> categoryName, Optional<String> actorLastName, Optional<String> languageName);
 
     List<Category> listCategories();
 
